@@ -7,10 +7,7 @@ package is.lab.mapita.modelo;
 
 import java.util.List;
 
-/**
- *
- * @author jonathan
- */
+
 public class MarcadorDAO extends AbstractDAO<Marcador>{
     /**
      * 

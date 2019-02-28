@@ -12,10 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author jonathan
- */
+
 public abstract class AbstractDAO<T> {
     
     /**

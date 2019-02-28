@@ -11,10 +11,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author jonathan
- */
+
+
 public class UsuarioDAO extends AbstractDAO<Usuario> {
     
     /**
