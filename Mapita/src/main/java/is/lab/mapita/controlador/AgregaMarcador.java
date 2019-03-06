@@ -7,9 +7,6 @@ package is.lab.mapita.controlador;
 
 import is.lab.mapita.modelo.Marcador;
 import is.lab.mapita.modelo.MarcadorDAO;
-import is.lab.mapita.modelo.Usuario;
-import is.lab.mapita.modelo.UsuarioDAO;
-import java.util.Date;
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -17,19 +14,10 @@ import javax.faces.bean.ManagedBean;
  * @author erick
  */
 public class AgregaMarcador {
-     private int idmarcador;
-     private Usuario usuario;
      private String descripcion;
      private double longitud;
      private double latitud;
 
-    public int getIdmarcador() {
-        return idmarcador;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
 
     public String getDescripcion() {
         return descripcion;
@@ -41,14 +29,6 @@ public class AgregaMarcador {
 
     public double getLatitud() {
         return latitud;
-    }
-
-    public void setIdmarcador(int idmarcador) {
-        this.idmarcador = idmarcador;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     public void setDescripcion(String descripcion) {
@@ -63,13 +43,13 @@ public class AgregaMarcador {
         this.latitud = latitud;
     }
 
-    public AgregaMarcador(int idmarcador, Usuario usuario, String descripcion, double longitud, double latitud) {
+    public void agregaMarcador() {
         Marcador m = new Marcador();
-        this.idmarcador = idmarcador;
-        this.usuario = usuario;
-        this.descripcion = descripcion;
-        this.longitud = longitud;
-        this.latitud = latitud;
+        m.setDescripcion(descripcion);
+        m.setLongitud(longitud);
+        m.setLatitud(latitud);
+        MarcadorDAO md = new MarcadorDAO();
+        md.save(m);
     }
      
      
